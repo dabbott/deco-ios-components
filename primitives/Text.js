@@ -12,7 +12,7 @@ class Rectangle extends Component {
   static defaultProps = {
     color: colors.actionBlue,
     fontSize: 16,
-    fontWeight: 'normal',
+    fontWeight: "normal",
     fontFamily: 'Helvetica Neue',
   }
 

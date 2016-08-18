@@ -19,6 +19,8 @@ class Rectangle extends Component {
       width: radius * 2,
       height: radius * 2,
       borderRadius: radius,
+      alignItems: 'center',
+      justifyContent: 'center',
     }
     
     return (

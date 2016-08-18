@@ -19,6 +19,8 @@ class Rectangle extends Component {
     const style = {
       backgroundColor,
       borderRadius,
+      alignItems: 'center',
+      justifyContent: 'center',
     }
     
     if (inheritedStyle) {
