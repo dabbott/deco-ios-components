@@ -12,7 +12,7 @@ class Rectangle extends Component {
   }
 
   render() {
-    const {backgroundColor, radius} = this.props
+    const {backgroundColor, radius, children} = this.props
     
     const style = {
       backgroundColor,
@@ -22,7 +22,9 @@ class Rectangle extends Component {
     }
     
     return (
-      <View style={style} />
+      <View style={style}>
+        {children}
+      </View>
     )
   }
 }

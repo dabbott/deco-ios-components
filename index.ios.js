@@ -12,37 +12,19 @@ import {
 } from 'react-native';
 
 import { Rectangle, Circle, Text, Triangle } from './primitives'
+import { Horizontal } from './layout'
 
 class DecoIOSComponents extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Rectangle />
+      <Horizontal>
+        <Rectangle borderRadius={4} />
         <Circle />
         <Triangle direction={'right'} width={20} height={20} />
         <Text text={'Test'} />
-      </View>
+      </Horizontal>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('DecoIOSComponents', () => DecoIOSComponents);
