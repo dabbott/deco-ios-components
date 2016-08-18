@@ -20,7 +20,10 @@ class DecoIOSComponents extends Component {
     return (
       <Vertical padding={10}>
         <Horizontal>
-          <Rectangle borderRadius={4} />
+          <Rectangle 
+            borderRadius={4} 
+            backgroundImage={{uri: 'https://moresaucelessfluff.files.wordpress.com/2013/12/jonga-app-icon-1024x1024.png'}} 
+          />
           <Circle />
           <Triangle direction={'right'} width={20} height={20} />
           <Text text={'Test'} />

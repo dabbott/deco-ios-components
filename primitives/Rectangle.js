@@ -1,5 +1,5 @@
 import React, { Component, } from 'react'
-import { View, } from 'react-native'
+import { View, Image } from 'react-native'
 import { colors } from '../config.json'
 
 class Rectangle extends Component {
@@ -7,12 +7,14 @@ class Rectangle extends Component {
   static propTypes = {}
 
   static defaultProps = {
-    backgroundColor: colors.actionBlue,
+    backgroundColor: 'transparent',
     borderRadius: 0,
     width: 100,
     height: 100,
     borderWidth: 0,
     borderColor: 'black',
+    backgroundImage: null,
+    resizeMode: 'cover',
   }
 
   render() {
@@ -25,6 +27,8 @@ class Rectangle extends Component {
       borderColor,
       children, 
       inheritedStyle,
+      backgroundImage,
+      resizeMode,
     } = this.props
     
     const style = {
@@ -62,11 +66,19 @@ class Rectangle extends Component {
       style.height = height
     }
     
-    return (
-      <View style={style}>
-        {children}
-      </View>
-    )
+    if (backgroundImage) {
+      return (
+        <Image style={style} source={backgroundImage} resizeMode={resizeMode}>
+          {children}
+        </Image>
+      )      
+    } else {
+      return (
+        <View style={style}>
+          {children}
+        </View>
+      )
+    }
   }
 }
 
