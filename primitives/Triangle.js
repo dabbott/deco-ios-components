@@ -35,7 +35,7 @@ import { colors } from '../config.json';
      direction: React.PropTypes.oneOf(['up', 'right', 'down', 'left', 'up-right', 'up-left', 'down-right', 'down-left']),
      width: React.PropTypes.number,
      height: React.PropTypes.number,
-     color: React.PropTypes.string,
+     backgroundColor: React.PropTypes.string,
    },
 
    getDefaultProps: function() {
@@ -43,7 +43,7 @@ import { colors } from '../config.json';
        direction: 'right',
        width: 0,
        height: 0,
-       color: colors.actionBlue,
+       backgroundColor: colors.actionBlue,
      };
    },
 
@@ -56,7 +56,7 @@ import { colors } from '../config.json';
          borderLeftWidth: this.props.width/2.0,
          borderTopColor: 'transparent',
          borderRightColor: 'transparent',
-         borderBottomColor: this.props.color,
+         borderBottomColor: this.props.backgroundColor,
          borderLeftColor: 'transparent',
        };
      } else if (this.props.direction == 'right') {
@@ -68,7 +68,7 @@ import { colors } from '../config.json';
          borderTopColor: 'transparent',
          borderRightColor: 'transparent',
          borderBottomColor: 'transparent',
-         borderLeftColor: this.props.color,
+         borderLeftColor: this.props.backgroundColor,
        };
      } else if (this.props.direction == 'down') {
        return {
@@ -76,7 +76,7 @@ import { colors } from '../config.json';
          borderRightWidth: this.props.width/2.0,
          borderBottomWidth: 0,
          borderLeftWidth: this.props.width/2.0,
-         borderTopColor: this.props.color,
+         borderTopColor: this.props.backgroundColor,
          borderRightColor: 'transparent',
          borderBottomColor: 'transparent',
          borderLeftColor: 'transparent',
@@ -88,7 +88,7 @@ import { colors } from '../config.json';
          borderBottomWidth: this.props.height/2.0,
          borderLeftWidth: 0,
          borderTopColor: 'transparent',
-         borderRightColor: this.props.color,
+         borderRightColor: this.props.backgroundColor,
          borderBottomColor: 'transparent',
          borderLeftColor: 'transparent',
        };
@@ -98,7 +98,7 @@ import { colors } from '../config.json';
          borderRightWidth: this.props.width,
          borderBottomWidth: 0,
          borderLeftWidth: 0,
-         borderTopColor: this.props.color,
+         borderTopColor: this.props.backgroundColor,
          borderRightColor: 'transparent',
          borderBottomColor: 'transparent',
          borderLeftColor: 'transparent',
@@ -110,7 +110,7 @@ import { colors } from '../config.json';
          borderBottomWidth: this.props.height,
          borderLeftWidth: 0,
          borderTopColor: 'transparent',
-         borderRightColor: this.props.color,
+         borderRightColor: this.props.backgroundColor,
          borderBottomColor: 'transparent',
          borderLeftColor: 'transparent',
        };
@@ -123,7 +123,7 @@ import { colors } from '../config.json';
          borderTopColor: 'transparent',
          borderRightColor: 'transparent',
          borderBottomColor: 'transparent',
-         borderLeftColor: this.props.color,
+         borderLeftColor: this.props.backgroundColor,
        };
      } else if (this.props.direction == 'down-right') {
        return {
@@ -133,7 +133,7 @@ import { colors } from '../config.json';
          borderLeftWidth: this.props.width,
          borderTopColor: 'transparent',
          borderRightColor: 'transparent',
-         borderBottomColor: this.props.color,
+         borderBottomColor: this.props.backgroundColor,
          borderLeftColor: 'transparent',
        };
      } else {

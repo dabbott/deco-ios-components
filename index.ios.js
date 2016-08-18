@@ -11,7 +11,7 @@ import {
   View
 } from 'react-native'
 
-import { Rectangle, Circle, Text, Triangle } from './primitives'
+import { Rectangle, Circle, Text, Triangle, Chevron } from './primitives'
 import { Horizontal, Vertical } from './layout'
 import { BigButton, SmallButton } from './atoms'
 
@@ -27,6 +27,7 @@ class DecoIOSComponents extends Component {
           <Circle />
           <Triangle direction={'right'} width={20} height={20} />
           <Text text={'Test'} />
+          <Chevron />
         </Horizontal>
         <SmallButton text={'Small Button'} />
         <Rectangle backgroundColor={'transparent'} height={10} />
