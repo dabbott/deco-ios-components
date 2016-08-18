@@ -1,13 +1,13 @@
 import React, { Component, } from 'react'
 import { View, StyleSheet } from 'react-native'
-import Triangle from './Triangle'
+import { colors } from '../config.json'
 
 class Chevron extends Component {
 
   static propTypes = {}
 
   static defaultProps = {
-    borderColor: 'black',
+    borderColor: colors.actionBlue,
     borderWidth: 1,
     width: 10,
     height: 20,
@@ -20,35 +20,62 @@ class Chevron extends Component {
   }
 
   render() {
-    const {width, height, borderColor, direction, borderWidth} = this.props
+    const {width, height, borderColor, borderWidth, direction} = this.props
+    const flip = (direction === 'down' || direction === 'left') ? -1 : 1
     
     const style = {
       width,
       height,
-      backgroundColor: 'lightgray',
     }
-
-    const diagonal = Math.sqrt(width * width + (height / 2) * (height / 2))
-    const rotation = Math.atan2(height / 2, width)
     
-    const a = {
-      position: 'absolute', 
-      top: height / 4, 
-      left: -(diagonal - width) / 2,
-      width: diagonal,
-      height: borderWidth,
-      backgroundColor: borderColor,
-      transform: [{rotateZ: `${rotation}rad`}],
-    }
+    let hypotenuse, rotation, a, b
 
-    const b = {
-      position: 'absolute', 
-      top: 3 * height / 4 - borderWidth / 2,
-      left: -(diagonal - width) / 2,
-      width: diagonal,
-      height: borderWidth,
-      backgroundColor: borderColor,
-      transform: [{rotateZ: `-${rotation}rad`}],
+    if (direction === 'left' || direction === 'right') {
+      hypotenuse = Math.sqrt(width * width + (height / 2) * (height / 2))
+      rotation = Math.atan2(height / 2, width)
+
+      a = {
+        position: 'absolute', 
+        top: height / 4, 
+        left: -(hypotenuse - width) / 2,
+        width: hypotenuse,
+        height: borderWidth,
+        backgroundColor: borderColor,
+        transform: [{rotateZ: `${rotation * flip}rad`}],
+      }
+
+      b = {
+        position: 'absolute', 
+        top: 3 * height / 4 - borderWidth / 2,
+        left: -(hypotenuse - width) / 2,
+        width: hypotenuse,
+        height: borderWidth,
+        backgroundColor: borderColor,
+        transform: [{rotateZ: `${-rotation * flip}rad`}],
+      } 
+    } else if (direction === 'up' || direction === 'down') {
+      hypotenuse = Math.sqrt(height * height + (width / 2) * (width / 2))
+      rotation = Math.atan2(width / 2, height)
+
+      a = {
+        position: 'absolute', 
+        left: width / 4, 
+        top: -(hypotenuse - height) / 2,
+        height: hypotenuse,
+        width: borderWidth,
+        backgroundColor: borderColor,
+        transform: [{rotateZ: `${rotation * flip}rad`}],
+      }
+
+      b = {
+        position: 'absolute', 
+        left: 3 * width / 4 - borderWidth / 2,
+        top: -(hypotenuse - height) / 2,
+        height: hypotenuse,
+        width: borderWidth,
+        backgroundColor: borderColor,
+        transform: [{rotateZ: `${-rotation * flip}rad`}],
+      } 
     }
 
     return (

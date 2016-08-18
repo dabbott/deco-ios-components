@@ -27,7 +27,7 @@ class DecoIOSComponents extends Component {
           <Circle />
           <Triangle direction={'right'} width={20} height={20} />
           <Text text={'Test'} />
-          <Chevron />
+          <Chevron height={10} width={5} borderWidth={1.5} />
         </Horizontal>
         <SmallButton text={'Small Button'} />
         <Rectangle backgroundColor={'transparent'} height={10} />
