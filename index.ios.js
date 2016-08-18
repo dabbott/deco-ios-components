@@ -13,7 +13,7 @@ import {
 
 import { Rectangle, Circle, Text, Triangle } from './primitives'
 import { Horizontal, Vertical } from './layout'
-import { BigButton } from './atoms'
+import { BigButton, SmallButton } from './atoms'
 
 class DecoIOSComponents extends Component {
   render() {
@@ -25,6 +25,8 @@ class DecoIOSComponents extends Component {
           <Triangle direction={'right'} width={20} height={20} />
           <Text text={'Test'} />
         </Horizontal>
+        <SmallButton text={'Small Button'} />
+        <Rectangle backgroundColor={'transparent'} height={10} />
         <BigButton text={'Big Button'} />
       </Vertical>
     );

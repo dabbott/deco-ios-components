@@ -11,16 +11,29 @@ class Rectangle extends Component {
     borderRadius: 0,
     width: 100,
     height: 100,
+    borderWidth: 0,
+    borderColor: 'black',
   }
 
   render() {
-    const {backgroundColor, width, height, borderRadius, children, inheritedStyle} = this.props
+    const {
+      backgroundColor, 
+      width, 
+      height, 
+      borderRadius,
+      borderWidth,
+      borderColor,
+      children, 
+      inheritedStyle,
+    } = this.props
     
     const style = {
       backgroundColor,
       borderRadius,
       alignItems: 'center',
       justifyContent: 'center',
+      borderWidth,
+      borderColor,
     }
     
     if (inheritedStyle) {

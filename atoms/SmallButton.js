@@ -2,8 +2,9 @@ import React, { Component, } from 'react'
 import { View, } from 'react-native'
 import { Rectangle, Text } from '../primitives'
 import { Horizontal } from '../layout'
+import { colors } from '../config.json'
 
-class BigButton extends Component {
+class SmallButton extends Component {
 
   static propTypes = {}
 
@@ -18,17 +19,19 @@ class BigButton extends Component {
     const {children, text} = this.props
     
     return (
-      <Horizontal height={57}>
-        <Rectangle 
-          backgroundColor={'black'} 
+      <Horizontal height={29}>
+        <Rectangle
+          backgroundColor={'transparent'}
+          borderColor={colors.actionBlue}
+          borderWidth={1}
           width={'auto'} 
           height={'auto'} 
-          borderRadius={12.5}
+          borderRadius={2.5}
         >
           <Text
-            color={'white'}
-            fontSize={20}
-            fontWeight={'500'}
+            color={colors.actionBlue}
+            fontSize={16}
+            fontWeight={'400'}
           >
             {text || children}
           </Text>
@@ -38,4 +41,4 @@ class BigButton extends Component {
   }
 }
 
-export default BigButton
+export default SmallButton
