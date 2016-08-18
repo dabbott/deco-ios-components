@@ -8,19 +8,43 @@ class Rectangle extends Component {
 
   static defaultProps = {
     backgroundColor: colors.actionBlue,
+    borderRadius: 0,
     width: 100,
     height: 100,
-    borderRadius: 0,
   }
 
   render() {
-    const {backgroundColor, width, height, borderRadius, children} = this.props
+    const {backgroundColor, width, height, borderRadius, children, inheritedStyle} = this.props
     
     const style = {
       backgroundColor,
-      width,
-      height,
       borderRadius,
+    }
+    
+    if (inheritedStyle) {
+      if (width === 'auto') {
+        if (inheritedStyle.flexDirection === 'column') {
+          style.alignSelf = 'stretch'
+        } else if (inheritedStyle.flexDirection === 'row') {
+          style.flex = 1
+        }
+      }
+      
+      if (height === 'auto') {
+        if (inheritedStyle.flexDirection === 'column') {
+          style.flex = 1
+        } else if (inheritedStyle.flexDirection === 'row') {
+          style.alignSelf = 'stretch'
+        }
+      }
+    }
+    
+    if (typeof width === 'number') {
+      style.width = width
+    }
+    
+    if (typeof height === 'number') {
+      style.height = height
     }
     
     return (

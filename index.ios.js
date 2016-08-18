@@ -12,17 +12,21 @@ import {
 } from 'react-native';
 
 import { Rectangle, Circle, Text, Triangle } from './primitives'
-import { Horizontal } from './layout'
+import { Horizontal, Vertical } from './layout'
+import { BigButton } from './atoms'
 
 class DecoIOSComponents extends Component {
   render() {
     return (
-      <Horizontal>
-        <Rectangle borderRadius={4} />
-        <Circle />
-        <Triangle direction={'right'} width={20} height={20} />
-        <Text text={'Test'} />
-      </Horizontal>
+      <Vertical>
+        <Horizontal>
+          <Rectangle borderRadius={4} />
+          <Circle />
+          <Triangle direction={'right'} width={20} height={20} />
+          <Text text={'Test'} />
+        </Horizontal>
+        <BigButton />
+      </Vertical>
     );
   }
 }

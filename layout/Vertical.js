@@ -12,12 +12,31 @@ class Vertical extends Component {
   }
 
   render() {
-    const {children, alignItems, justifyContent, width} = this.props
+    const {
+      children, 
+      alignItems, 
+      justifyContent, 
+      width,
+      padding,
+      paddingHorizontal,
+      paddingVertical,
+      paddingTop,
+      paddingRight,
+      paddingBottom,
+      paddingLeft,
+    } = this.props
     
     const style = {
       flexDirection: 'column',
       alignItems,
       justifyContent,
+      padding,
+      paddingHorizontal,
+      paddingVertical,
+      paddingTop,
+      paddingRight,
+      paddingBottom,
+      paddingLeft,
     }
     
     if (width >= 0) {
@@ -28,7 +47,11 @@ class Vertical extends Component {
     
     return (
       <View style={style}>
-        {children}
+        {React.Children.map(children, child => {
+          return React.cloneElement(child, {
+            inheritedStyle: style,
+          })
+        })}
       </View>
     )
   }
