@@ -18,7 +18,7 @@ import { BigButton } from './atoms'
 class DecoIOSComponents extends Component {
   render() {
     return (
-      <Vertical>
+      <Vertical padding={20}>
         <Horizontal>
           <Rectangle borderRadius={4} />
           <Circle />
