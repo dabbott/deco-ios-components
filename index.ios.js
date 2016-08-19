@@ -14,6 +14,7 @@ import {
 import { Rectangle, Circle, Text, Triangle, Chevron } from './primitives'
 import { Horizontal, Vertical, Spacer } from './layout'
 import { BigButton, SmallButton, AppIcon } from './atoms'
+import { AppCardSmall } from './molecules'
 
 const appIconImage = {uri: 'https://moresaucelessfluff.files.wordpress.com/2013/12/jonga-app-icon-1024x1024.png'}
 
@@ -33,9 +34,14 @@ class DecoIOSComponents extends Component {
           <Text text={'Test'} />
           <Chevron height={10} width={5} borderWidth={1.5} />
         </Horizontal>
-        <AppIcon backgroundImage={appIconImage} />
-        <AppIcon backgroundImage={appIconImage} />
-        <AppIcon backgroundImage={appIconImage} />
+        <Horizontal distribute={'start'}>
+          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
+          <Spacer size={10} />
+          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
+          <Spacer size={10} />
+          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
+          <Spacer size={10} />
+        </Horizontal>
         <Horizontal height={'shrink'} justifyContent={'space-between'} marginVertical={10}>
           <SmallButton text={'Small Button A'} />
           <Spacer size={10} />

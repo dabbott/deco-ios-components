@@ -4,6 +4,7 @@ import {
   Text,
 } from 'react-native'
 import { colors } from '../config.json'
+import * as Layout from '../utils/Layout'
 
 class Rectangle extends Component {
 
@@ -14,16 +15,34 @@ class Rectangle extends Component {
     fontSize: 16,
     fontWeight: "normal",
     fontFamily: 'Helvetica Neue',
+    multiline: false,
   }
 
   render() {
-    const {color, fontSize, fontWeight, fontFamily, text, children} = this.props
+    const {
+      color, 
+      fontSize, 
+      fontWeight, 
+      fontFamily, 
+      text,
+      multiline, 
+      width,
+      height,
+      children,
+      inheritedStyle,
+    } = this.props
     
     const style = {
       color,
       fontSize,
       fontWeight,
       fontFamily,
+//       backgroundColor: 'rgba(0,0,0,0.1)',
+      ...Layout.calculateDimensions({width, height}, inheritedStyle),
+    }
+    
+    if (! multiline) {
+      style.lineHeight = fontSize
     }
     
     return (

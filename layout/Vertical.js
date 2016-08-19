@@ -17,6 +17,8 @@ class Vertical extends Component {
       children, 
       alignItems, 
       justifyContent,
+      align,
+      distribute,
       height,
       width,
       padding,
@@ -38,8 +40,8 @@ class Vertical extends Component {
     
     const style = {
       flexDirection: 'column',
-      alignItems,
-      justifyContent,
+      alignItems: align ? Layout.convertAlign(align) : alignItems,
+      justifyContent: distribute ? Layout.convertDistribute(distribute) : justifyContent,
       padding,
       paddingHorizontal,
       paddingVertical,
@@ -54,6 +56,7 @@ class Vertical extends Component {
       marginRight,
       marginBottom,
       marginLeft,
+//       backgroundColor: 'rgba(0,0,0,0.1)',
       ...Layout.calculateDimensions({height, width}, inheritedStyle)
     }
     
