@@ -1,5 +1,6 @@
 import React, { Component, } from 'react'
 import { View, } from 'react-native'
+import * as Layout from '../utils/Layout'
 
 class Horizontal extends Component {
 
@@ -9,13 +10,6 @@ class Horizontal extends Component {
     alignItems: 'center',
     justifyContent: 'center',
     height: -1,
-    padding: 0,
-    paddingHorizontal: 0,
-    paddingVertical: 0,
-    paddingTop: 0,
-    paddingRight: 0,
-    paddingBottom: 0,
-    paddingLeft: 0,
   }
 
   render() {
@@ -24,6 +18,7 @@ class Horizontal extends Component {
       alignItems, 
       justifyContent, 
       height,
+      width,
       padding,
       paddingHorizontal,
       paddingVertical,
@@ -31,6 +26,7 @@ class Horizontal extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
+      inheritedStyle,
     } = this.props
     
     const style = {
@@ -44,12 +40,8 @@ class Horizontal extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
-    }
-    
-    if (height >= 0) {
-      style.height = height
-    } else {
-      style.flex = 1
+      backgroundColor: 'rgba(0,0,0,0.1)',
+      ...Layout.calculateDimensions({height, width}, inheritedStyle)
     }
     
     return (

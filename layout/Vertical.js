@@ -1,5 +1,6 @@
 import React, { Component, } from 'react'
 import { View, } from 'react-native'
+import * as Layout from '../utils/Layout'
 
 class Vertical extends Component {
 
@@ -15,7 +16,8 @@ class Vertical extends Component {
     const {
       children, 
       alignItems, 
-      justifyContent, 
+      justifyContent,
+      height,
       width,
       padding,
       paddingHorizontal,
@@ -24,6 +26,7 @@ class Vertical extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
+      inheritedStyle,
     } = this.props
     
     const style = {
@@ -37,12 +40,7 @@ class Vertical extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
-    }
-    
-    if (width >= 0) {
-      style.width = width
-    } else {
-      style.flex = 1
+      ...Layout.calculateDimensions({height, width}, inheritedStyle)
     }
     
     return (

@@ -16,25 +16,27 @@ class SmallButton extends Component {
   }
 
   render() {
-    const {children, text} = this.props
+    const {children, text, inheritedStyle} = this.props
     
     return (
-      <Horizontal height={29}>
+      <Horizontal width={'grow'} height={29} inheritedStyle={inheritedStyle}>
         <Rectangle
           backgroundColor={'transparent'}
           borderColor={colors.actionBlue}
           borderWidth={1}
-          width={'auto'} 
-          height={'auto'} 
+          width={'grow'} 
+          height={'grow'} 
           borderRadius={2.5}
         >
-          <Text
-            color={colors.actionBlue}
-            fontSize={16}
-            fontWeight={'400'}
-          >
-            {text || children}
-          </Text>
+          <Horizontal paddingHorizontal={8}>
+            <Text
+              color={colors.actionBlue}
+              fontSize={16}
+              fontWeight={'400'}
+            >
+              {text || children}
+            </Text>
+          </Horizontal>
         </Rectangle>
       </Horizontal>
     )

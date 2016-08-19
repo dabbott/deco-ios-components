@@ -21,8 +21,8 @@ class BigButton extends Component {
       <Horizontal height={57}>
         <Rectangle 
           backgroundColor={'black'} 
-          width={'auto'} 
-          height={'auto'} 
+          width={'grow'} 
+          height={'grow'} 
           borderRadius={12.5}
         >
           <Text

@@ -1,6 +1,7 @@
 import React, { Component, } from 'react'
 import { View, Image } from 'react-native'
 import { colors } from '../config.json'
+import * as Layout from '../utils/Layout'
 
 class Rectangle extends Component {
 
@@ -38,32 +39,7 @@ class Rectangle extends Component {
       justifyContent: 'center',
       borderWidth,
       borderColor,
-    }
-    
-    if (inheritedStyle) {
-      if (width === 'auto') {
-        if (inheritedStyle.flexDirection === 'column') {
-          style.alignSelf = 'stretch'
-        } else if (inheritedStyle.flexDirection === 'row') {
-          style.flex = 1
-        }
-      }
-      
-      if (height === 'auto') {
-        if (inheritedStyle.flexDirection === 'column') {
-          style.flex = 1
-        } else if (inheritedStyle.flexDirection === 'row') {
-          style.alignSelf = 'stretch'
-        }
-      }
-    }
-    
-    if (typeof width === 'number') {
-      style.width = width
-    }
-    
-    if (typeof height === 'number') {
-      style.height = height
+      ...Layout.calculateDimensions({width, height}, inheritedStyle)
     }
     
     if (backgroundImage) {
