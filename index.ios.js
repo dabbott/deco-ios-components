@@ -12,7 +12,7 @@ import {
 } from 'react-native'
 
 import { Rectangle, Circle, Text, Triangle, Chevron } from './primitives'
-import { Horizontal, Vertical } from './layout'
+import { Horizontal, Vertical, Spacer } from './layout'
 import { BigButton, SmallButton, AppIcon } from './atoms'
 
 const appIconImage = {uri: 'https://moresaucelessfluff.files.wordpress.com/2013/12/jonga-app-icon-1024x1024.png'}
@@ -38,6 +38,7 @@ class DecoIOSComponents extends Component {
         <AppIcon backgroundImage={appIconImage} />
         <Horizontal height={'shrink'} justifyContent={'space-between'} marginVertical={10}>
           <SmallButton text={'Small Button A'} />
+          <Spacer size={10} />
           <SmallButton text={'Small Button B'} />
         </Horizontal>
         <BigButton text={'Big Button'} />
