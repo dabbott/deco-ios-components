@@ -26,6 +26,7 @@ class Chevron extends Component {
     const style = {
       width,
       height,
+//       backgroundColor: 'red',
     }
     
     let hypotenuse, rotation, a, b
@@ -86,13 +87,5 @@ class Chevron extends Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  absolute: {
-    top: 0, 
-    left: 0,
-    position: 'absolute',
-  }
-})
 
 export default Chevron

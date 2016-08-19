@@ -64,6 +64,8 @@ class Horizontal extends Component {
     return (
       <View style={style}>
         {React.Children.map(children, child => {
+          if (! child) return child
+          
           return React.cloneElement(child, {
             inheritedStyle: style,
           })

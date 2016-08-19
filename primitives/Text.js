@@ -6,7 +6,20 @@ import {
 import { colors } from '../config.json'
 import * as Layout from '../utils/Layout'
 
-class Rectangle extends Component {
+const adjustBaseline = (fontSize) => {
+  switch (fontSize) {
+    case 11:
+    case 12:
+      return 2
+    case 16:
+    case 17:
+      return 3
+  }
+  
+  return 0
+}
+
+class TextComponent extends Component {
 
   static propTypes = {}
 
@@ -15,7 +28,6 @@ class Rectangle extends Component {
     fontSize: 16,
     fontWeight: "normal",
     fontFamily: 'Helvetica Neue',
-    multiline: false,
   }
 
   render() {
@@ -25,12 +37,17 @@ class Rectangle extends Component {
       fontWeight, 
       fontFamily, 
       text,
-      multiline, 
       width,
       height,
       children,
       inheritedStyle,
+      verticalAlign,
     } = this.props
+    
+    const wrapperStyle = {
+//       backgroundColor: 'rgba(200,0,0,0.1)',
+      ...Layout.calculateDimensions({width, height}, inheritedStyle),
+    }
     
     const style = {
       color,
@@ -38,19 +55,20 @@ class Rectangle extends Component {
       fontWeight,
       fontFamily,
 //       backgroundColor: 'rgba(0,0,0,0.1)',
-      ...Layout.calculateDimensions({width, height}, inheritedStyle),
     }
-    
-    if (! multiline) {
-      style.lineHeight = fontSize
+      
+    if (verticalAlign === 'baseline') {
+      style.top = adjustBaseline(fontSize)
     }
     
     return (
-      <Text style={style}>
-        {text || children}
-      </Text>
+      <View style={wrapperStyle}>
+        <Text style={style}>
+          {text || children}
+        </Text>
+      </View>
     )
   }
 }
 
-export default Rectangle
+export default TextComponent

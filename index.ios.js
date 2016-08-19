@@ -15,14 +15,15 @@ import { Rectangle, Circle, Text, Triangle, Chevron } from './primitives'
 import { Horizontal, Vertical, Spacer } from './layout'
 import { BigButton, SmallButton, AppIcon } from './atoms'
 import { AppCardSmall } from './molecules'
+import { AppCardSmallGallery } from './compositions'
 
-const appIconImage = {uri: 'https://moresaucelessfluff.files.wordpress.com/2013/12/jonga-app-icon-1024x1024.png'}
+const appIconImage = 'https://moresaucelessfluff.files.wordpress.com/2013/12/jonga-app-icon-1024x1024.png'
 
 class DecoIOSComponents extends Component {
   render() {
     return (
-      <Vertical padding={10} alignItems={'stretch'} height={'grow'}>
-        <Horizontal height={120}>
+      <Vertical padding={10} align={'stretch'} height={'grow'}>
+        <Horizontal marginBottom={10}>
           <Rectangle
             borderColor={'rgba(0,0,0,0.1)'}
             borderWidth={1}
@@ -34,14 +35,7 @@ class DecoIOSComponents extends Component {
           <Text text={'Test'} />
           <Chevron height={10} width={5} borderWidth={1.5} />
         </Horizontal>
-        <Horizontal distribute={'start'}>
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
-          <Spacer size={10} />
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
-          <Spacer size={10} />
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
-          <Spacer size={10} />
-        </Horizontal>
+        <AppCardSmallGallery />
         <Horizontal height={'shrink'} justifyContent={'space-between'} marginVertical={10}>
           <SmallButton text={'Small Button A'} />
           <Spacer size={10} />

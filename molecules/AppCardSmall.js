@@ -23,20 +23,29 @@ class AppCardSmall extends Component {
           borderRadius={14}
           backgroundImage={image}
         />
-        <Spacer size={8} />
+        <Spacer size={6} />
         <Text 
           width={'auto'}
           text={title}
           fontSize={12}
           color={'black'}
         />
-        <Spacer size={4} />
+        <Spacer size={2} />
         <Text 
           width={'auto'}
           text={subtitle}
           fontSize={12}
           color={'#666666'}
         />
+        {price && <Spacer size={2} />}
+        {price && (
+          <Text 
+            width={'auto'}
+            text={price}
+            fontSize={12}
+            color={'#666666'}
+          />
+        )}
       </Vertical>
     )
   }

@@ -2,6 +2,7 @@ import React, { Component, } from 'react'
 import { View, Image } from 'react-native'
 import { colors } from '../config.json'
 import * as Layout from '../utils/Layout'
+import * as ImageUtils from '../utils/Image'
 
 class Rectangle extends Component {
 
@@ -44,7 +45,11 @@ class Rectangle extends Component {
     
     if (backgroundImage) {
       return (
-        <Image style={style} source={backgroundImage} resizeMode={resizeMode}>
+        <Image 
+          style={style} 
+          source={ImageUtils.normalizeImage(backgroundImage)} 
+          resizeMode={resizeMode}
+        >
           {children}
         </Image>
       )      
