@@ -20,7 +20,7 @@ class AppCardSmall extends Component {
           borderWidth={1}
           width={95} 
           height={95} 
-          borderRadius={14}
+          borderRadius={20}
           backgroundImage={image}
         />
         <Spacer size={6} />

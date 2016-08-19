@@ -10,26 +10,37 @@ class AppCardSmallGallery extends Component {
 
   static propTypes = {}
 
-  static defaultProps = {}
-
-  constructor(props) {
-    super(props)
-    this.state = {}
+  static defaultProps = {
+    horizontalInset: 20,
+    title: 'New Apps We Love',
+    action: 'See All',
+    list: [],
   }
 
   render() {
+    const {title, action, list, horizontalInset} = this.props
+    
+    const items = list.map(({id, name, category, icon}) => {
+      return [
+        <AppCardSmall key={id} image={icon} title={name} subtitle={category} />,
+        <Spacer key={id + '_spacer'} size={10} />,
+      ]
+    })
+    
+    const flattened = [].concat.apply([], items);
+    
     return (
-      <Vertical align={'stretch'} marginTop={19}>
-        <Horizontal distribute={'start'} align={'bottom'}>
+      <Vertical align={'stretch'} marginTop={19} paddingLeft={horizontalInset}>
+        <Horizontal distribute={'start'} align={'bottom'} paddingRight={horizontalInset}>
           <Text
-            text={'New Apps We Love'}
+            text={title}
             fontSize={17}
             color={'black'}
             width={'grow'}
             verticalAlign={'baseline'}
           />
           <Text
-            text={'See All'}
+            text={action}
             fontSize={11}
             color={'#666666'}
             fontWeight={'500'}
@@ -45,20 +56,14 @@ class AppCardSmallGallery extends Component {
         </Horizontal>
         <Spacer size={12} />
         <Horizontal align={'top'} distribute={'start'}>
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
-          <Spacer size={10} />
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} price={'$2.99'} />
-          <Spacer size={10} />
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
-          <Spacer size={10} />
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
-          <Spacer size={10} />
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} price={'$2.99'} />
-          <Spacer size={10} />
-          <AppCardSmall image={appIconImage} title={'Diffission'} subtitle={'Games'} />
+          {flattened}
         </Horizontal>
-        <Spacer height={19} />
-        <Rectangle height={0.5} width={'auto'} backgroundColor={'#C5C5C5'} />
+        <Spacer height={9} />
+        <Rectangle 
+          height={0.5} 
+          width={'auto'} 
+          backgroundColor={'#C5C5C5'}
+        />
       </Vertical>
     )
   }

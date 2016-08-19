@@ -1,5 +1,33 @@
 {
   "colors": {
     "actionBlue": "#1E8CFF"
+  },
+  "data": {
+    "apps": [
+      {
+        "id": "com.apple.music",
+        "name": "Music",
+        "category": "Music",
+        "icon": "https://i.imgur.com/Urpwufv.png"
+      },
+      {
+        "id": "com.apple.messages",
+        "name": "Messages",
+        "category": "Communication",
+        "icon": "https://i.imgur.com/fou5Fpv.png"
+      },
+      {
+        "id": "com.apple.news",
+        "name": "News",
+        "category": "News",
+        "icon": "https://i.imgur.com/acTNYIT.png"
+      },
+      {
+        "id": "com.apple.notes",
+        "name": "Notes",
+        "category": "Productivity",
+        "icon": "https://i.imgur.com/5kLFMjE.png"
+      }
+    ]
   }
 }
