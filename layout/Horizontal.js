@@ -26,6 +26,13 @@ class Horizontal extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
+      margin,
+      marginHorizontal,
+      marginVertical,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
       inheritedStyle,
     } = this.props
     
@@ -40,7 +47,13 @@ class Horizontal extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
-      backgroundColor: 'rgba(0,0,0,0.1)',
+      margin,
+      marginHorizontal,
+      marginVertical,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
       ...Layout.calculateDimensions({height, width}, inheritedStyle)
     }
     

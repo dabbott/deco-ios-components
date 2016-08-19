@@ -10,6 +10,7 @@ class SmallButton extends Component {
 
   static defaultProps = {
     backgroundImage: null,
+    size: 95,
   }
 
   constructor(props) {
@@ -18,15 +19,15 @@ class SmallButton extends Component {
   }
 
   render() {
-    const {backgroundImage} = this.props
+    const {backgroundImage, size} = this.props
     
     return (
       <Rectangle
         backgroundColor={'white'}
         borderColor={'rgba(0,0,0,0.1)'}
         borderWidth={1}
-        width={60} 
-        height={60} 
+        width={size} 
+        height={size} 
         borderRadius={14}
         backgroundImage={backgroundImage}
       />

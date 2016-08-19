@@ -26,6 +26,13 @@ class Vertical extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
+      margin,
+      marginHorizontal,
+      marginVertical,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
       inheritedStyle,
     } = this.props
     
@@ -40,6 +47,13 @@ class Vertical extends Component {
       paddingRight,
       paddingBottom,
       paddingLeft,
+      margin,
+      marginHorizontal,
+      marginVertical,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
       ...Layout.calculateDimensions({height, width}, inheritedStyle)
     }
     

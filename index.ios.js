@@ -36,12 +36,10 @@ class DecoIOSComponents extends Component {
         <AppIcon backgroundImage={appIconImage} />
         <AppIcon backgroundImage={appIconImage} />
         <AppIcon backgroundImage={appIconImage} />
-        <Rectangle backgroundColor={'transparent'} height={10} />
-        <Horizontal height={'shrink'} justifyContent={'space-between'}>
+        <Horizontal height={'shrink'} justifyContent={'space-between'} marginVertical={10}>
           <SmallButton text={'Small Button A'} />
           <SmallButton text={'Small Button B'} />
         </Horizontal>
-        <Rectangle backgroundColor={'transparent'} height={10} />
         <BigButton text={'Big Button'} />
       </Vertical>
     );
