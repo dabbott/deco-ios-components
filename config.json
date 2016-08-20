@@ -27,6 +27,30 @@
         "name": "Notes",
         "category": "Productivity",
         "icon": "https://i.imgur.com/5kLFMjE.png"
+      },
+      {
+        "id": "com.apple.music2",
+        "name": "Music",
+        "category": "Music",
+        "icon": "https://i.imgur.com/Urpwufv.png"
+      },
+      {
+        "id": "com.apple.messages2",
+        "name": "Messages",
+        "category": "Communication",
+        "icon": "https://i.imgur.com/fou5Fpv.png"
+      },
+      {
+        "id": "com.apple.news2",
+        "name": "News",
+        "category": "News",
+        "icon": "https://i.imgur.com/acTNYIT.png"
+      },
+      {
+        "id": "com.apple.notes2",
+        "name": "Notes",
+        "category": "Productivity",
+        "icon": "https://i.imgur.com/5kLFMjE.png"
       }
     ]
   }

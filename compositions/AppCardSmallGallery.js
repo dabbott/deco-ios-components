@@ -1,7 +1,7 @@
 import React, { Component, } from 'react'
 import { View, } from 'react-native'
 import { Text, Chevron, Rectangle } from '../primitives'
-import { Horizontal, Vertical, Spacer } from '../layout'
+import { Horizontal, HorizontalScroll, Vertical, Spacer } from '../layout'
 import { AppCardSmall } from '../molecules'
 
 const appIconImage = 'https://moresaucelessfluff.files.wordpress.com/2013/12/jonga-app-icon-1024x1024.png'
@@ -20,18 +20,18 @@ class AppCardSmallGallery extends Component {
   render() {
     const {title, action, list, horizontalInset} = this.props
     
-    const items = list.map(({id, name, category, icon}) => {
+    const items = list.map(({id, name, category, icon}, i) => {
       return [
         <AppCardSmall key={id} image={icon} title={name} subtitle={category} />,
-        <Spacer key={id + '_spacer'} size={10} />,
+        i !== list.length - 1 && <Spacer key={id + '_spacer'} size={10} />,
       ]
     })
     
     const flattened = [].concat.apply([], items);
     
     return (
-      <Vertical align={'stretch'} marginTop={19} paddingLeft={horizontalInset}>
-        <Horizontal distribute={'start'} align={'bottom'} paddingRight={horizontalInset}>
+      <Vertical align={'stretch'} marginTop={19}>
+        <Horizontal distribute={'start'} align={'bottom'} paddingHorizontal={horizontalInset}>
           <Text
             text={title}
             fontSize={17}
@@ -55,15 +55,23 @@ class AppCardSmallGallery extends Component {
           />
         </Horizontal>
         <Spacer size={12} />
-        <Horizontal align={'top'} distribute={'start'}>
+        <HorizontalScroll
+          width={'grow'}
+          align={'top'}
+          distribute={'start'}
+          contentInset={{left: horizontalInset, right: horizontalInset}}
+          contentOffset={{x: -20}}
+        >
           {flattened}
-        </Horizontal>
+        </HorizontalScroll>
         <Spacer height={9} />
-        <Rectangle 
-          height={0.5} 
-          width={'auto'} 
-          backgroundColor={'#C5C5C5'}
-        />
+        <Horizontal width={'grow'} height={'shrink'} align={'stretch'} paddingLeft={horizontalInset}>
+          <Rectangle 
+            height={0.5}
+            width={'grow'}
+            backgroundColor={'#C5C5C5'}
+          />
+        </Horizontal>
       </Vertical>
     )
   }

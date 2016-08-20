@@ -1,5 +1,5 @@
 import React, { Component, } from 'react'
-import { View, } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import { Rectangle, Text } from '../primitives'
 import { Vertical, Spacer } from '../layout'
 
@@ -14,6 +14,7 @@ class AppCardSmall extends Component {
     
     return (
       <Vertical align={'left'} width={95} height={'shrink'}>
+        <TouchableOpacity>
         <Rectangle
           backgroundColor={'white'}
           borderColor={'rgba(0,0,0,0.1)'}
@@ -23,6 +24,7 @@ class AppCardSmall extends Component {
           borderRadius={20}
           backgroundImage={image}
         />
+        </TouchableOpacity>
         <Spacer size={6} />
         <Text 
           width={'auto'}

@@ -1,3 +1,5 @@
+import React from 'react'
+
 export const isNumericDimension = (dimension) => {
   return typeof dimension === 'number'
 }
@@ -79,5 +81,13 @@ export const convertDistribute = (distribute) => {
     return 'flex-end'
   }
   
-  return align
+  return distribute
+}
+
+export const cloneWithInheritedStyle = (children, inheritedStyle) => {
+  return React.Children.map(children, child => {
+    if (! child) return child
+
+    return React.cloneElement(child, {inheritedStyle})
+  })
 }

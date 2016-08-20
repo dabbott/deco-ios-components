@@ -40,8 +40,6 @@ class Horizontal extends Component {
     
     const style = {
       flexDirection: 'row',
-      alignItems,
-      justifyContent,
       alignItems: align ? Layout.convertAlign(align) : alignItems,
       justifyContent: distribute ? Layout.convertDistribute(distribute) : justifyContent,
       padding,
@@ -63,13 +61,7 @@ class Horizontal extends Component {
     
     return (
       <View style={style}>
-        {React.Children.map(children, child => {
-          if (! child) return child
-          
-          return React.cloneElement(child, {
-            inheritedStyle: style,
-          })
-        })}
+        {Layout.cloneWithInheritedStyle(children, style)}
       </View>
     )
   }

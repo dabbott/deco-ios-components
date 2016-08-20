@@ -23,7 +23,7 @@ const appIconImage = 'https://moresaucelessfluff.files.wordpress.com/2013/12/jon
 class DecoIOSComponents extends Component {
   render() {
     return (
-      <Vertical 
+      <Vertical
         marginTop={20} 
         distribute={'start'} 
         align={'stretch'} 
@@ -35,21 +35,21 @@ class DecoIOSComponents extends Component {
           backgroundColor={'black'}
           backgroundImage={'https://hd.unsplash.com/photo-1465628976988-fe43bda15798'}
         />
-        <AppCardSmallGallery 
+        <AppCardSmallGallery
           title={'Apple Apps'}
           action={'See All'}
           list={data.apps}
         />
-        <AppCardSmallGallery 
+        <AppCardSmallGallery
           title={'Apple Apps'}
           action={'See All'}
           list={data.apps}
         />
-        <AppCardSmallGallery 
+        <AppCardSmallGallery
           title={'Follow Team USA'}
           action={'See All'}
         />
-        <AppCardSmallGallery 
+        <AppCardSmallGallery
           title={'Sprint to the Finish'}
           action={'See All'}
         />
