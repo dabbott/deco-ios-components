@@ -59,7 +59,7 @@ class HorizontalScroll extends Component {
     }
     
     const contentContainerStyle = {
-      flexDirection: 'row',
+      flexDirection: 'column',
       alignItems: align ? Layout.convertAlign(align) : alignItems,
       justifyContent: distribute ? Layout.convertDistribute(distribute) : justifyContent,
     }
@@ -67,7 +67,7 @@ class HorizontalScroll extends Component {
     return (
       <ScrollView
         snapToInterval={snapToInterval}
-        horizontal={true}
+        horizontal={false}
         contentInset={contentInset}
         contentOffset={contentOffset}
         style={style}

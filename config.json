@@ -29,28 +29,28 @@
         "icon": "https://i.imgur.com/5kLFMjE.png"
       },
       {
-        "id": "com.apple.music2",
-        "name": "Music",
-        "category": "Music",
-        "icon": "https://i.imgur.com/Urpwufv.png"
+        "id": "com.apple.store",
+        "name": "Apple Store",
+        "category": "Shopping",
+        "icon": "https://i.imgur.com/yUJ9kSV.png"
       },
       {
-        "id": "com.apple.messages2",
-        "name": "Messages",
-        "category": "Communication",
-        "icon": "https://i.imgur.com/fou5Fpv.png"
+        "id": "com.apple.photos",
+        "name": "Photos",
+        "category": "Photography",
+        "icon": "https://i.imgur.com/HX3KExm.png"
       },
       {
-        "id": "com.apple.news2",
-        "name": "News",
+        "id": "com.apple.podcasts",
+        "name": "Podcasts",
         "category": "News",
-        "icon": "https://i.imgur.com/acTNYIT.png"
+        "icon": "https://i.imgur.com/kM4SIFv.png"
       },
       {
-        "id": "com.apple.notes2",
-        "name": "Notes",
-        "category": "Productivity",
-        "icon": "https://i.imgur.com/5kLFMjE.png"
+        "id": "com.apple.weather",
+        "name": "Weather",
+        "category": "Lifestyle",
+        "icon": "https://i.imgur.com/yoG4KL6.png"
       }
     ]
   }

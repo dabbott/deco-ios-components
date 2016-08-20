@@ -23,7 +23,7 @@ class AppCardSmallGallery extends Component {
     const items = list.map(({id, name, category, icon}, i) => {
       return [
         <AppCardSmall key={id} image={icon} title={name} subtitle={category} />,
-        i !== list.length - 1 && <Spacer key={id + '_spacer'} size={10} />,
+        i !== list.length - 1 && <Spacer key={'spacer-' + i} size={10} />,
       ]
     })
     
@@ -59,8 +59,10 @@ class AppCardSmallGallery extends Component {
           width={'grow'}
           align={'top'}
           distribute={'start'}
-          contentInset={{left: horizontalInset, right: horizontalInset}}
-          contentOffset={{x: -20}}
+          paddingHorizontal={20}
+          contentInset={{right: horizontalInset}}
+          snapToInterval={105}
+          showsHorizontalScrollIndicator={false}
         >
           {flattened}
         </HorizontalScroll>
