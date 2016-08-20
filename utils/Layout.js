@@ -91,3 +91,41 @@ export const cloneWithInheritedStyle = (children, inheritedStyle) => {
     return React.cloneElement(child, {inheritedStyle})
   })
 }
+
+const propsForCategory = {
+  padding: [
+    'padding',
+    'paddingHorizontal',
+    'paddingVertical',
+    'paddingTop',
+    'paddingRight',
+    'paddingBottom',
+    'paddingLeft',
+  ],
+  margin: [
+    'margin',
+    'marginHorizontal',
+    'marginVertical',
+    'marginTop',
+    'marginRight',
+    'marginBottom',
+    'marginLeft',
+  ],
+}
+
+export const extractProps = (source, ...categories) => {
+  const extracted = {}
+  
+  categories.forEach(category => {
+    const list = propsForCategory[category] || []
+    list.forEach(prop => extracted[prop] = source[prop])
+  })
+  
+  return extracted
+}
+
+export const reactNativeParentStyle = {
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  alignItems: 'stretch',
+}

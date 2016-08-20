@@ -8,7 +8,7 @@ class Rectangle extends Component {
 
   static defaultProps = {
     size: 20,
-    inheritedStyle: {},
+    inheritedStyle: Layout.reactNativeParentStyle,
   }
 
   render() {

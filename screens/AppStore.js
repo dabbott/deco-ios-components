@@ -14,11 +14,15 @@ import { data } from '../config'
 
 class AppStore extends Component {
   render() {
+    const {inheritedStyle} = this.props
+    
     return (
       <VerticalScroll
+        inheritedStyle={inheritedStyle}
         distribute={'start'} 
         align={'stretch'} 
         height={'grow'}
+        width={'auto'}
         automaticallyAdjustContentInsets={true}
       >
         <Rectangle

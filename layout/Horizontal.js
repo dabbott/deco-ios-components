@@ -7,9 +7,9 @@ class Horizontal extends Component {
   static propTypes = {}
 
   static defaultProps = {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: -1,
+    align: 'stretch',
+    distribute: 'start',
+    inheritedStyle: Layout.reactNativeParentStyle,
   }
 
   render() {
@@ -21,20 +21,6 @@ class Horizontal extends Component {
       distribute,
       height,
       width,
-      padding,
-      paddingHorizontal,
-      paddingVertical,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      margin,
-      marginHorizontal,
-      marginVertical,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
       inheritedStyle,
     } = this.props
     
@@ -42,20 +28,7 @@ class Horizontal extends Component {
       flexDirection: 'row',
       alignItems: align ? Layout.convertAlign(align) : alignItems,
       justifyContent: distribute ? Layout.convertDistribute(distribute) : justifyContent,
-      padding,
-      paddingHorizontal,
-      paddingVertical,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      margin,
-      marginHorizontal,
-      marginVertical,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
+      ...Layout.extractProps(this.props, 'padding', 'margin'),
       ...Layout.calculateDimensions({height, width}, inheritedStyle)
     }
     

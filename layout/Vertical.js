@@ -7,9 +7,9 @@ class Vertical extends Component {
   static propTypes = {}
 
   static defaultProps = {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: -1,
+    align: 'stretch',
+    distribute: 'start',
+    inheritedStyle: Layout.reactNativeParentStyle,
   }
 
   render() {
@@ -21,20 +21,7 @@ class Vertical extends Component {
       distribute,
       height,
       width,
-      padding,
-      paddingHorizontal,
-      paddingVertical,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      margin,
-      marginHorizontal,
-      marginVertical,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
+      overflow,
       inheritedStyle,
     } = this.props
     
@@ -42,21 +29,9 @@ class Vertical extends Component {
       flexDirection: 'column',
       alignItems: align ? Layout.convertAlign(align) : alignItems,
       justifyContent: distribute ? Layout.convertDistribute(distribute) : justifyContent,
-      padding,
-      paddingHorizontal,
-      paddingVertical,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      margin,
-      marginHorizontal,
-      marginVertical,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
+      overflow,
 //       backgroundColor: 'rgba(0,0,0,0.1)',
+      ...Layout.extractProps(this.props, 'padding', 'margin'),
       ...Layout.calculateDimensions({height, width}, inheritedStyle)
     }
     

@@ -6,7 +6,9 @@ class HorizontalScroll extends Component {
 
   static propTypes = {}
 
-  static defaultProps = {}
+  static defaultProps = {
+    inheritedStyle: Layout.reactNativeParentStyle,
+  }
 
   render() {
     const {
@@ -23,38 +25,11 @@ class HorizontalScroll extends Component {
       distribute,
       height,
       width,
-      padding,
-      paddingHorizontal,
-      paddingVertical,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      margin,
-      marginHorizontal,
-      marginVertical,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
       inheritedStyle,
     } = this.props
     
     const style = {
-      padding,
-      paddingHorizontal,
-      paddingVertical,
-      paddingTop,
-      paddingRight,
-      paddingBottom,
-      paddingLeft,
-      margin,
-      marginHorizontal,
-      marginVertical,
-      marginTop,
-      marginRight,
-      marginBottom,
-      marginLeft,
+      ...Layout.extractProps(this.props, 'padding', 'margin'),
       ...Layout.calculateDimensions({height, width}, inheritedStyle),
     }
     

@@ -13,8 +13,11 @@ class AppCardSmall extends Component {
     const {image, title, subtitle, price} = this.props
     
     return (
-      <Vertical align={'left'} width={95} height={'shrink'}>
-        <TouchableOpacity>
+      <Vertical
+        align={'left'}
+        width={95}
+        height={'shrink'}
+      >
         <Rectangle
           backgroundColor={'white'}
           borderColor={'rgba(0,0,0,0.1)'}
@@ -24,7 +27,6 @@ class AppCardSmall extends Component {
           borderRadius={20}
           backgroundImage={image}
         />
-        </TouchableOpacity>
         <Spacer size={6} />
         <Text 
           width={'auto'}

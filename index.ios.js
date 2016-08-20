@@ -23,7 +23,12 @@ import { data } from './config'
 class DecoIOSComponents extends Component {
   render() {
     return (
-      <AppStore />
+      <Vertical
+        height={'grow'}
+        width={'grow'}
+      >
+        <AppStore />
+      </Vertical>
     );
   }
 }
