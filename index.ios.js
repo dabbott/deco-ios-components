@@ -9,7 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   View,
-  NavigatorIOS
+  NavigatorIOS,
+  TabBarIOS,
 } from 'react-native'
 
 import { Rectangle, Circle, Text, Triangle, Chevron } from './primitives'
@@ -17,36 +18,8 @@ import { Horizontal, Vertical, VerticalScroll, Spacer } from './layout'
 import { BigButton, SmallButton, AppIcon } from './atoms'
 import { AppCardSmall } from './molecules'
 import { AppCardSmallGallery } from './compositions'
-import { AppStore } from './screens'
+import { AppStoreApp } from './apps'
 import { data } from './config'
+import { icons } from './assets'
 
-class DecoIOSComponents extends Component {
-  render() {
-    return (
-      <Vertical
-        height={'grow'}
-        width={'grow'}
-      >
-        <AppStore />
-      </Vertical>
-    );
-  }
-}
-
-class Navigation extends Component {
-  render() {
-    return (
-      <NavigatorIOS
-        initialRoute={{
-          component: DecoIOSComponents,
-          title: 'Latest Apps',
-          leftButtonTitle: 'Categories',
-          translucent: true,
-        }}
-        style={{flex: 1}}
-      />
-    )
-  }
-}
-
-AppRegistry.registerComponent('DecoIOSComponents', () => Navigation);
+AppRegistry.registerComponent('DecoIOSComponents', () => AppStoreApp);

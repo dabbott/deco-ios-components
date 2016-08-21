@@ -41,7 +41,9 @@ class AppCardSmall extends Component {
           fontSize={12}
           color={'#666666'}
         />
-        {price && <Spacer size={2} />}
+        {price && (
+          <Spacer size={2} />
+        )}
         {price && (
           <Text 
             width={'auto'}
