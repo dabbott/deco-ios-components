@@ -10,16 +10,11 @@ class SmallButton extends Component {
 
   static defaultProps = {}
 
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
   render() {
-    const {children, text, inheritedStyle} = this.props
+    const {children, text, inheritedStyle, width} = this.props
     
     return (
-      <Horizontal width={'grow'} height={29} inheritedStyle={inheritedStyle}>
+      <Horizontal width={width} height={29} inheritedStyle={inheritedStyle}>
         <Rectangle
           backgroundColor={'transparent'}
           borderColor={colors.actionBlue}

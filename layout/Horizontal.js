@@ -29,7 +29,8 @@ class Horizontal extends Component {
       alignItems: align ? Layout.convertAlign(align) : alignItems,
       justifyContent: distribute ? Layout.convertDistribute(distribute) : justifyContent,
       ...Layout.extractProps(this.props, 'padding', 'margin'),
-      ...Layout.calculateDimensions({height, width}, inheritedStyle)
+      ...Layout.calculateDimensions({height, width}, inheritedStyle),
+      backgroundColor: this.props.backgroundColor,
     }
     
     return (

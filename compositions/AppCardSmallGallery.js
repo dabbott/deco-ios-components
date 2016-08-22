@@ -4,8 +4,6 @@ import { Text, Chevron, Rectangle } from '../primitives'
 import { Horizontal, HorizontalScroll, Vertical, Spacer } from '../layout'
 import { AppCardSmall } from '../molecules'
 
-const appIconImage = 'https://moresaucelessfluff.files.wordpress.com/2013/12/jonga-app-icon-1024x1024.png'
-
 class AppCardSmallGallery extends Component {
 
   static propTypes = {}
@@ -18,7 +16,7 @@ class AppCardSmallGallery extends Component {
   }
 
   render() {
-    const {title, action, list, horizontalInset} = this.props
+    const {title, action, list, horizontalInset, inheritedStyle} = this.props
     
     const items = list.map(({id, name, category, icon}, i) => {
       return [
@@ -30,7 +28,7 @@ class AppCardSmallGallery extends Component {
     const flattened = [].concat.apply([], items);
     
     return (
-      <Vertical align={'stretch'} marginTop={19}>
+      <Vertical align={'stretch'} marginTop={19} inheritedStyle={inheritedStyle}>
         <Horizontal distribute={'start'} align={'bottom'} paddingHorizontal={horizontalInset}>
           <Text
             text={title}

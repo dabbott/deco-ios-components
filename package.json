@@ -8,5 +8,139 @@
   "dependencies": {
     "react": "15.2.1",
     "react-native": "0.31.0"
+  },
+  "deco": {
+    "components": [
+      {
+        "name": "Horizontal",
+        "schemaVersion": "0.0.3",
+        "description": "Horizontal Layout",
+        "imports": {
+          "../layout": [
+            "Horizontal"
+          ]
+        },
+        "props": [
+          {
+            "name": "width",
+            "type": "string",
+            "default": "'grow'"
+          },
+          {
+            "name": "height",
+            "type": "string",
+            "default": "'grow'"
+          },
+          {
+            "name": "children",
+            "type": "string",
+            "default": ""
+          }
+        ]
+      },
+      {
+        "name": "Vertical",
+        "schemaVersion": "0.0.3",
+        "description": "Vertical Layout",
+        "imports": {
+          "../layout": [
+            "Vertical"
+          ]
+        },
+        "props": [
+          {
+            "name": "width",
+            "type": "string",
+            "default": "'grow'"
+          },
+          {
+            "name": "height",
+            "type": "string",
+            "default": "'grow'"
+          },
+          {
+            "name": "children",
+            "type": "string",
+            "default": ""
+          }
+        ]
+      },
+      {
+        "name": "Rectangle",
+        "schemaVersion": "0.0.3",
+        "description": "Rectangle primitive",
+        "imports": {
+          "../primitives": [
+            "Rectangle"
+          ]
+        },
+        "props": [
+          {
+            "name": "width",
+            "type": "number",
+            "default": "100"
+          },
+          {
+            "name": "height",
+            "type": "number",
+            "default": "100"
+          },
+          {
+            "name": "backgroundColor",
+            "type": "number",
+            "default": "'#1E8CFF'"
+          }
+        ]
+      },
+      {
+        "name": "Text",
+        "schemaVersion": "0.0.3",
+        "description": "Text primitive",
+        "imports": {
+          "../primitives": [
+            "Text"
+          ]
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "string",
+            "default": "'Text'"
+          },
+          {
+            "name": "color",
+            "type": "string",
+            "default": "'black'"
+          },
+          {
+            "name": "fontSize",
+            "type": "number",
+            "default": "12"
+          },
+          {
+            "name": "fontWeight",
+            "type": "number",
+            "default": "'normal'"
+          }
+        ]
+      },
+      {
+        "name": "Spacer",
+        "schemaVersion": "0.0.3",
+        "description": "Spacer layout helper",
+        "imports": {
+          "../layout": [
+            "Spacer"
+          ]
+        },
+        "props": [
+          {
+            "name": "size",
+            "type": "number",
+            "default": "10"
+          }
+        ]
+      }
+    ]
   }
 }

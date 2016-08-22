@@ -42,6 +42,7 @@ class TextComponent extends Component {
       children,
       inheritedStyle,
       verticalAlign,
+      textAlign,
     } = this.props
     
     const wrapperStyle = {
@@ -54,6 +55,7 @@ class TextComponent extends Component {
       fontSize,
       fontWeight,
       fontFamily,
+      textAlign,
 //       backgroundColor: 'rgba(0,0,0,0.1)',
     }
       

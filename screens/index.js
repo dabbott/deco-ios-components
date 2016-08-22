@@ -1,5 +1,7 @@
-import AppStore from './AppStore'
+import AppStoreFeatured from './AppStoreFeatured'
+import AppStoreTopCharts from './AppStoreTopCharts'
 
 export {
-  AppStore,
+  AppStoreFeatured,
+  AppStoreTopCharts,
 }

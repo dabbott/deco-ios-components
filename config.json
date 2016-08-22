@@ -8,49 +8,71 @@
         "id": "com.apple.music",
         "name": "Music",
         "category": "Music",
-        "icon": "https://i.imgur.com/Urpwufv.png"
+        "icon": "https://i.imgur.com/Urpwufv.png",
+        "rating": 4.5,
+        "reviewCount": 123
       },
       {
         "id": "com.apple.messages",
         "name": "Messages",
         "category": "Communication",
-        "icon": "https://i.imgur.com/fou5Fpv.png"
+        "icon": "https://i.imgur.com/fou5Fpv.png",
+        "rating": 4,
+        "reviewCount": 1288,
+        "price": "$6.99"
       },
       {
         "id": "com.apple.news",
         "name": "News",
         "category": "News",
-        "icon": "https://i.imgur.com/acTNYIT.png"
+        "icon": "https://i.imgur.com/acTNYIT.png",
+        "rating": 2.5,
+        "reviewCount": 683,
+        "price": "$6.99"
       },
       {
         "id": "com.apple.notes",
         "name": "Notes",
         "category": "Productivity",
-        "icon": "https://i.imgur.com/5kLFMjE.png"
+        "icon": "https://i.imgur.com/5kLFMjE.png",
+        "rating": 5,
+        "reviewCount": 413,
+        "price": "$6.99"
       },
       {
         "id": "com.apple.store",
         "name": "Apple Store",
         "category": "Shopping",
-        "icon": "https://i.imgur.com/yUJ9kSV.png"
+        "icon": "https://i.imgur.com/yUJ9kSV.png",
+        "rating": 3,
+        "reviewCount": 31,
+        "price": "$6.99"
       },
       {
         "id": "com.apple.photos",
         "name": "Photos",
         "category": "Photography",
-        "icon": "https://i.imgur.com/HX3KExm.png"
+        "icon": "https://i.imgur.com/HX3KExm.png",
+        "rating": 4.5,
+        "reviewCount": 47273,
+        "price": "$6.99"
       },
       {
         "id": "com.apple.podcasts",
         "name": "Podcasts",
         "category": "News",
-        "icon": "https://i.imgur.com/kM4SIFv.png"
+        "icon": "https://i.imgur.com/kM4SIFv.png",
+        "rating": 3,
+        "reviewCount": 97,
+        "price": "$6.99"
       },
       {
         "id": "com.apple.weather",
         "name": "Weather",
         "category": "Lifestyle",
-        "icon": "https://i.imgur.com/yoG4KL6.png"
+        "icon": "https://i.imgur.com/yoG4KL6.png",
+        "rating": 4,
+        "reviewCount": 564
       }
     ]
   }

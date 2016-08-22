@@ -56,9 +56,9 @@ class AppStore extends Component {
           paddingHorizontal={20}
         >
           <Horizontal height={'shrink'} justifyContent={'space-between'} marginVertical={10}>
-            <SmallButton text={'Small Button A'} />
+            <SmallButton width={'grow'} text={'Small Button A'} />
             <Spacer size={10} />
-            <SmallButton text={'Small Button B'} />
+            <SmallButton width={'grow'} text={'Small Button B'} />
           </Horizontal>
         </Vertical>
       </VerticalScroll>

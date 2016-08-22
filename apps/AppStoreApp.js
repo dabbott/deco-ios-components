@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, NavigatorIOS, TabBarIOS } from 'react-native'
 import { Vertical } from '../layout'
-import { AppStore } from '../screens'
+import { AppStoreFeatured, AppStoreTopCharts } from '../screens'
 import { icons } from '../assets'
 
 const tabs = [
@@ -14,7 +14,7 @@ const tabs = [
 
 class AppStoreApp extends Component {
   state = {
-    tab: 'Featured',
+    tab: 'Top Charts',
   }
   
   renderContent(tab) {
@@ -23,8 +23,21 @@ class AppStoreApp extends Component {
         return (
           <NavigatorIOS
             initialRoute={{
-              component: AppStore,
+              component: AppStoreFeatured,
               title: 'Featured',
+              leftButtonTitle: 'Categories',
+              rightButtonIcon: {uri: icons.navbarMenu, scale: 2},
+              translucent: true,
+            }}
+            style={{flex: 1}}
+          /> 
+        )
+      case 'Top Charts':
+        return (
+          <NavigatorIOS
+            initialRoute={{
+              component: AppStoreTopCharts,
+              title: 'Top Charts',
               leftButtonTitle: 'Categories',
               rightButtonIcon: {uri: icons.navbarMenu, scale: 2},
               translucent: true,
