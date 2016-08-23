@@ -24,12 +24,12 @@
           {
             "name": "width",
             "type": "string",
-            "default": "'grow'"
+            "default": "grow"
           },
           {
             "name": "height",
             "type": "string",
-            "default": "'grow'"
+            "default": "grow"
           },
           {
             "name": "children",
@@ -51,12 +51,12 @@
           {
             "name": "width",
             "type": "string",
-            "default": "'grow'"
+            "default": "grow"
           },
           {
             "name": "height",
             "type": "string",
-            "default": "'grow'"
+            "default": "grow"
           },
           {
             "name": "children",
@@ -78,17 +78,17 @@
           {
             "name": "width",
             "type": "number",
-            "default": "100"
+            "default": 100
           },
           {
             "name": "height",
             "type": "number",
-            "default": "100"
+            "default": 100
           },
           {
             "name": "backgroundColor",
             "type": "number",
-            "default": "'#1E8CFF'"
+            "default": "#1E8CFF"
           }
         ]
       },
@@ -105,22 +105,22 @@
           {
             "name": "text",
             "type": "string",
-            "default": "'Text'"
+            "default": "Text"
           },
           {
             "name": "color",
             "type": "string",
-            "default": "'black'"
+            "default": "black"
           },
           {
             "name": "fontSize",
             "type": "number",
-            "default": "12"
+            "default": 12
           },
           {
             "name": "fontWeight",
             "type": "number",
-            "default": "'normal'"
+            "default": "normal"
           }
         ]
       },
@@ -137,7 +137,7 @@
           {
             "name": "size",
             "type": "number",
-            "default": "10"
+            "default": 10
           }
         ]
       },
@@ -165,7 +165,7 @@
           {
             "name": "text",
             "type": "string",
-            "default": "'Text'"
+            "default": "Text"
           }
         ]
       },
@@ -182,12 +182,12 @@
           {
             "name": "text",
             "type": "string",
-            "default": "'Text'"
+            "default": "Text"
           },
           {
             "name": "width",
             "type": "string",
-            "default": "'grow'"
+            "default": "grow"
           }
         ]
       },
@@ -204,12 +204,12 @@
           {
             "name": "text",
             "type": "string",
-            "default": "'Text'"
+            "default": "Text"
           },
           {
             "name": "width",
             "type": "string",
-            "default": "'grow'"
+            "default": "grow"
           }
         ]
       }
