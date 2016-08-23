@@ -1,3 +1,4 @@
+import { HairlineDivider } from '../atoms'
 import React, { Component, } from 'react'
 import { View, } from 'react-native'
 import { Text, Chevron, Rectangle } from '../primitives'
@@ -9,14 +10,15 @@ class AppCardSmallGallery extends Component {
   static propTypes = {}
 
   static defaultProps = {
-    horizontalInset: 20,
+    horizontalInset: 15,
     title: 'New Apps We Love',
     action: 'See All',
+    dividerType: 'padded',
     list: [],
   }
 
   render() {
-    const {title, action, list, horizontalInset, inheritedStyle} = this.props
+    const {title, action, list, horizontalInset, dividerType, inheritedStyle} = this.props
     
     const items = list.map(({id, name, category, icon}, i) => {
       return [
@@ -57,7 +59,7 @@ class AppCardSmallGallery extends Component {
           width={'grow'}
           align={'top'}
           distribute={'start'}
-          paddingHorizontal={20}
+          paddingHorizontal={15}
           contentInset={{right: horizontalInset}}
           snapToInterval={105}
           showsHorizontalScrollIndicator={false}
@@ -65,13 +67,7 @@ class AppCardSmallGallery extends Component {
           {flattened}
         </HorizontalScroll>
         <Spacer height={9} />
-        <Horizontal width={'grow'} height={'shrink'} align={'stretch'} paddingLeft={horizontalInset}>
-          <Rectangle 
-            height={0.5}
-            width={'grow'}
-            backgroundColor={'#C5C5C5'}
-          />
-        </Horizontal>
+        <HairlineDivider type={dividerType} />
       </Vertical>
     )
   }

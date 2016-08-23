@@ -1,6 +1,7 @@
 import React, { Component, } from 'react'
 import { View, TouchableOpacity } from 'react-native'
-import { Rectangle, Text } from '../primitives'
+import { OutlinedImage } from '../atoms'
+import { Text } from '../primitives'
 import { Vertical, Spacer } from '../layout'
 
 class AppCardSmall extends Component {
@@ -18,10 +19,7 @@ class AppCardSmall extends Component {
         width={95}
         height={'shrink'}
       >
-        <Rectangle
-          backgroundColor={'white'}
-          borderColor={'rgba(0,0,0,0.1)'}
-          borderWidth={1}
+        <OutlinedImage
           width={95} 
           height={95} 
           borderRadius={20}

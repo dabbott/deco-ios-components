@@ -140,6 +140,78 @@
             "default": "10"
           }
         ]
+      },
+      {
+        "name": "HairlineDivider",
+        "schemaVersion": "0.0.3",
+        "description": "Hairline divider",
+        "imports": {
+          "../atoms": [
+            "HairlineDivider"
+          ]
+        },
+        "props": []
+      },
+      {
+        "name": "TextHeader",
+        "schemaVersion": "0.0.3",
+        "description": "Text header with hairline divider",
+        "imports": {
+          "../molecules": [
+            "TextHeader"
+          ]
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "string",
+            "default": "'Text'"
+          }
+        ]
+      },
+      {
+        "name": "SmallButton",
+        "schemaVersion": "0.0.3",
+        "description": "Small-sized button",
+        "imports": {
+          "../atoms": [
+            "SmallButton"
+          ]
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "string",
+            "default": "'Text'"
+          },
+          {
+            "name": "width",
+            "type": "string",
+            "default": "'grow'"
+          }
+        ]
+      },
+      {
+        "name": "MediumButton",
+        "schemaVersion": "0.0.3",
+        "description": "Medium-sized button",
+        "imports": {
+          "../atoms": [
+            "MediumButton"
+          ]
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "string",
+            "default": "'Text'"
+          },
+          {
+            "name": "width",
+            "type": "string",
+            "default": "'grow'"
+          }
+        ]
       }
     ]
   }

@@ -118,7 +118,11 @@ export const extractProps = (source, ...categories) => {
   
   categories.forEach(category => {
     const list = propsForCategory[category] || []
-    list.forEach(prop => extracted[prop] = source[prop])
+    list.forEach(prop => {
+      if (typeof source[prop] !== 'undefined') {
+        extracted[prop] = source[prop]
+      }
+    })
   })
   
   return extracted

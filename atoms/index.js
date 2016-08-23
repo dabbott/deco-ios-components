@@ -1,9 +1,13 @@
-import AppIcon from './AppIcon'
 import BigButton from './BigButton'
+import OutlinedImage from './OutlinedImage'
+import HairlineDivider from './HairlineDivider'
 import SmallButton from './SmallButton'
+import MediumButton from './MediumButton'
 
 export {
-  AppIcon,
   BigButton,
+  HairlineDivider,
+  OutlinedImage,
   SmallButton,
+  MediumButton,
 }

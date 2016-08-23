@@ -6,9 +6,23 @@
 
 import React, { Component, } from 'react'
 import { Rectangle, Circle, Text, Triangle, Chevron } from '../primitives'
-import { Horizontal, Vertical, VerticalScroll, Spacer } from '../layout'
-import { BigButton, SmallButton, AppIcon } from '../atoms'
-import { AppCardSmall } from '../molecules'
+import {
+  Horizontal,
+  Vertical,
+  VerticalScroll,
+  Spacer,
+} from '../layout'
+import {
+  BigButton,
+  SmallButton,
+  AppIcon,
+  MediumButton,
+} from '../atoms'
+import {
+  AppCardSmall,
+  TextHeader,
+  TextLinkRow,
+} from '../molecules'
 import { AppCardSmallGallery } from '../compositions'
 import { data } from '../config'
 
@@ -49,18 +63,52 @@ class AppStore extends Component {
           title={'Sprint to the Finish'}
           action={'See All'}
         />
-        <Vertical
-          distribute={'start'} 
-          align={'stretch'} 
+        <TextHeader
+          text={'Quick Links'}
+        />
+        <TextLinkRow text={'Apps Made by Apple'} />
+        <TextLinkRow text={'Apps for Apple Watch'} />
+        <TextLinkRow text={'Editor\'s Choice'} />
+        <TextLinkRow text={'Apps in Spanish'} />
+        <TextLinkRow text={'Buy with Apple Pay'} />
+        <TextLinkRow text={'Parents\' Guide to iTunes'} />
+        <TextLinkRow text={'Learn More About In-App Purchases'} />
+        <Spacer
+          size={15}
+        />
+        <Horizontal
+          width={'grow'}
           height={'grow'}
-          paddingHorizontal={20}
+          paddingHorizontal={15}
         >
-          <Horizontal height={'shrink'} justifyContent={'space-between'} marginVertical={10}>
-            <SmallButton width={'grow'} text={'Small Button A'} />
-            <Spacer size={10} />
-            <SmallButton width={'grow'} text={'Small Button B'} />
-          </Horizontal>
-        </Vertical>
+          <MediumButton
+            text={'Redeem'}
+            width={'grow'}
+          />
+          <Spacer
+            size={10}
+          />
+          <MediumButton
+            text={'Send Gift'}
+            width={'grow'}
+          />
+        </Horizontal>
+        <Spacer
+          size={10}
+        />
+        <Horizontal
+          width={'grow'}
+          height={'grow'}
+          paddingHorizontal={15}
+        >
+          <MediumButton
+            text={'Apple ID: deco@gmail.com'}
+            width={'grow'}
+          />
+        </Horizontal>
+        <Spacer
+          size={15}
+        />
       </VerticalScroll>
     );
   }

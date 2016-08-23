@@ -6,6 +6,8 @@ import {
 } from '../primitives'
 import {
   SmallButton,
+  OutlinedImage,
+  HairlineDivider,
 } from '../atoms'
 import {
   Vertical,
@@ -24,7 +26,7 @@ class AppSummaryRow extends Component {
   }
 
   render() {
-    const {rank, image, title, subtitle, price, rating, reviewCount, inheritedStyle} = this.props
+    const {rank, image, title, subtitle, buttonText, rating, reviewCount, inheritedStyle} = this.props
     
     return (
       <Vertical
@@ -32,41 +34,42 @@ class AppSummaryRow extends Component {
         width={'grow'}
         height={'shrink'}
         paddingLeft={15}
-        paddingTop={10}
         inheritedStyle={inheritedStyle}
       >
         <Horizontal
           align={'center'}
           width={'grow'}
           height={'grow'}
+          paddingVertical={10}
           paddingRight={15}
         >
           <Text
             text={rank}
             color={lightTextColor}
-            fontSize={15}
-            fontWeight={'normal'}
+            fontSize={20}
+            fontWeight={'300'}
           />
           <Spacer size={10} />
-          <Rectangle
+          <OutlinedImage
             width={64}
             height={64}
-            backgroundColor={'white'}
+            borderRadius={14}
             backgroundImage={image}
-            borderColor={'rgba(0,0,0,0.1)'}
-            borderWidth={1}
-            borderRadius={15}
           />
           <Spacer size={10} />
           <Vertical
             width={'grow'}
             height={'grow'}
+            distribute={'center'}
           >
             <Text
               text={title}
               color={'black'}
-              fontSize={12}
+              fontSize={14}
               fontWeight={'normal'}
+            />
+            <Spacer
+              size={2}
             />
             <Text
               text={subtitle}
@@ -74,46 +77,22 @@ class AppSummaryRow extends Component {
               fontSize={12}
               fontWeight={'normal'}
             />
+            <Spacer
+              size={3}
+            />
             <Text
               text={`(${reviewCount})`}
               color={lightTextColor}
-              fontSize={12}
+              fontSize={11}
               fontWeight={'normal'}
             />
           </Vertical>
-          <Vertical
+          <SmallButton
+            text={buttonText}
             width={'shrink'}
-            height={'grow'}
-            align={'center'}
-            distribute={'end'}
-          >
-            <SmallButton
-              text={price}
-              width={'shrink'}
-            />
-            <Spacer
-              size={2}
-            />
-            <Text
-              text={'In-App Purchases'}
-              color={lightTextColor}
-              fontSize={8}
-              fontWeight={'normal'}
-              width={60}
-              textAlign={'center'}
-            />
-          </Vertical>
-        </Horizontal>
-        <Spacer
-          size={10}
-        />
-        <Horizontal width={'grow'} height={'shrink'} align={'stretch'}>
-          <Rectangle 
-            height={0.5}
-            width={'grow'}
-            backgroundColor={'#C5C5C5'}
           />
         </Horizontal>
+        <HairlineDivider />
       </Vertical>
     )
   }

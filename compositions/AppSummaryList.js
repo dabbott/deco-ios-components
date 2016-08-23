@@ -23,7 +23,7 @@ class AppSummaryList extends Component {
           image={icon}
           title={name}
           subtitle={category}
-          price={'$6.99'}
+          buttonText={'$6.99'}
           rating={rating}
           reviewCount={reviewCount}
         />

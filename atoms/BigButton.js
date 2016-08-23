@@ -9,11 +9,6 @@ class BigButton extends Component {
 
   static defaultProps = {}
 
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
   render() {
     const {children, text} = this.props
     
