@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component, } from 'react'
 import { View, Image } from 'react-native'
 import { colors } from '../config.json'
